@@ -1,0 +1,14 @@
+{
+    "swagger": {
+        "outputDirectory": "./dist",
+        "entryFile": "./src/server.ts",
+        "host": "localhost:3000",
+        "basePath": "/api/v1/employee"
+    },
+    "routes": {
+        "basePath": "/api/v1/employee",
+        "entryFile": "./src/server.ts",
+        "middleware": "express",
+        "routesDir": "./src"
+    }
+}

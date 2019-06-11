@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist",
+      "sourceMap": true,
+      "lib": [
+        "es6",
+        "dom",
+        "esnext.asynciterable"
+      ],
+      "types": [
+        "reflect-metadata"
+      ],
+      "module": "commonjs",
+      "strict": true,
+      "noUnusedLocals": true,
+      "target": "es6",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "typeRoots": [
+        "./types"
+      ]
+    }
+  }
