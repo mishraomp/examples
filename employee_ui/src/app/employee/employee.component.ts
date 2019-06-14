@@ -25,7 +25,9 @@ export class EmployeeComponent implements OnInit {
   }
 
   async ngOnInit() {
+    console.log(new Date());
     this.employees = await this.getDataFromService();
+    console.log(new Date());
   }
 
   private getDataFromService(): any {
@@ -90,14 +92,18 @@ export class EmployeeComponent implements OnInit {
     } else {
       await this.updateEmployee(this.employee);
     }
+    console.log(new Date());
     this.employees = await this.getDataFromService();
+    console.log(new Date());
     this.employee = null;
     this.displayDialog = false;
   }
 
   async delete() {
     await this.deleteEmployee(this.selectedEmployee);
+    console.log(new Date());
     this.employees = await this.getDataFromService();
+    console.log(new Date());
     this.employee = null;
     this.displayDialog = false;
   }
