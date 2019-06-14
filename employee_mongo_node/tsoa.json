@@ -2,7 +2,7 @@
     "swagger": {
         "outputDirectory": "./dist",
         "entryFile": "./src/server.ts",
-        "host": "localhost:3000",
+        "host": "localhost:4201",
         "basePath": "/api/v1/employee"
     },
     "routes": {

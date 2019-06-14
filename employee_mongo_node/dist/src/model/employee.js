@@ -1,7 +1,7 @@
-import * as mongoose from "mongoose";
-export class Employee {
-    public static employeeModel?: mongoose.Model<any>;
-    private static isInstantiated: boolean = false;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose = require("mongoose");
+class Employee {
     constructor() {
         if (!Employee.isInstantiated) {
             const schema = mongoose.Schema;
@@ -26,5 +26,7 @@ export class Employee {
             Employee.isInstantiated = true;
         }
     }
-
 }
+Employee.isInstantiated = false;
+exports.Employee = Employee;
+//# sourceMappingURL=employee.js.map

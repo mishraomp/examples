@@ -18,7 +18,9 @@ export class MongooseConfig {
             socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
             family: 4 // Use IPv4, skip trying IPv6
         };
-        mongoose.connect('mongodb://localhost:27017/example', options);
+        //mongoose.set('debug', true);
+        mongoose.connect('mongodb://localhost:27017/example', options).then(() => { console.log("connected") },
+            err => { console.log("err", err); });
         this.con = mongoose.connection;
         //Bind connection to error event (to get notification of connection errors)
         this.con.on('error', console.error.bind(console, 'MongoDB connection error:'));

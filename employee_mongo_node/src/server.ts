@@ -2,6 +2,7 @@ import * as nconf from "nconf";
 import { Application } from "./app";
 import { LoggerConfig } from "./config/flogger";
 import { MongooseConfig } from "./config/mongoose-config";
+import { Employee } from "./model/employee";
 
 const handleUncaughtException = (err: any) => {
   if (err.errno === "EADDRINUSE") {
@@ -14,15 +15,6 @@ const handleUncaughtException = (err: any) => {
   }
 };
 
-const getEnvVariable = (paramName: string, errorMessage: string) => {
-  const value: string = nconf.get(paramName);
-  if (!value) {
-    errorMessage = errorMessage || paramName + " environment variable is missing or not configured with a valid value.";
-    throw new Error(errorMessage);
-  } else {
-    return value;
-  }
-};
 
 try {
   nconf.argv().env();
@@ -30,6 +22,7 @@ try {
   LoggerConfig.initializeLogger();
   Application.initializeExpress(port);
   new MongooseConfig(); // initiate the db connection.
+  new Employee();
   new LoggerConfig().appLogger.info("Server started listening on port " + port);
 } catch (error) {
   console.error(error, "There were errors while initializing express, application will now exit.");

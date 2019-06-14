@@ -1,5 +1,4 @@
 import * as Logger from "bunyan";
-import * as nconf from "nconf";
 import * as RotatingFileStream from "bunyan-rotating-file-stream";
 let appLoggerOptions: Logger.LoggerOptions;
 let httpLoggerOptions: Logger.LoggerOptions;
@@ -9,7 +8,7 @@ export class LoggerConfig {
 
   public static initializeLogger(): void {
     appLoggerOptions = {
-      name: nconf.get("employee_mongo_node"),
+      name: "employee_mongo_node",
       serializers: Logger.stdSerializers,
       src: true,
       streams: [
@@ -20,7 +19,7 @@ export class LoggerConfig {
         {
           level: Logger.TRACE,
           stream: new RotatingFileStream({
-            path: nconf.get("/home/isddev/log/employee_mongo_node.log"), // log to a file,
+            path: "/home/isddev/log/employee_mongo_node.log", // log to a file,
             period: "1d",          // daily rotation
             totalFiles: 10,        // keep up to 10 back copies
             rotateExisting: true,  // Give ourselves a clean file when we start up, based on period
@@ -32,7 +31,7 @@ export class LoggerConfig {
       ]
     };
     httpLoggerOptions = {
-      name: nconf.get("MICRO_SERVICE_CODE"),
+      name: "employee_mongo_node",
       src: true,
       serializers: {
         req: reqSerializer,
@@ -46,7 +45,7 @@ export class LoggerConfig {
         {
           level: Logger.TRACE,
           stream: new RotatingFileStream({
-            path: nconf.get("/home/isddev/log/employee_mongo_node_reqrsp.log"), // log to a file,
+            path: "/home/isddev/log/employee_mongo_node_reqrsp.log", // log to a file,
             period: "1d",          // daily rotation
             totalFiles: 10,        // keep up to 10 back copies
             rotateExisting: true,  // Give ourselves a clean file when we start up, based on period

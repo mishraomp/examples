@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "local": "tsoa swagger && nodemon --legacy-watch --watch ./dist --inspect=0.0.0.0:9301 --nolazy ./dist/src/server.js --NODE_ENV=local",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "om",
