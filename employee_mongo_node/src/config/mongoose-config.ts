@@ -1,4 +1,5 @@
 import * as mongoose from "mongoose";
+import { Employee } from "../model/employee";
 
 export class MongooseConfig {
     private con: mongoose.Connection;
@@ -24,6 +25,7 @@ export class MongooseConfig {
         this.con = mongoose.connection;
         //Bind connection to error event (to get notification of connection errors)
         this.con.on('error', console.error.bind(console, 'MongoDB connection error:'));
+        new Employee();//instantiate the Employee Model.
     }
     get connection() {
         return this.con;

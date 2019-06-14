@@ -10,7 +10,7 @@
         "logLevel": "debug"
     },
     "/api":{
-        "target": "http://localhost:8090",
+        "target": "http://localhost:4201",
         "secure": false,
         "logLevel": "debug"
     }
