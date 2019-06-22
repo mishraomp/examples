@@ -20,7 +20,7 @@ export class MongooseConfig {
             family: 4 // Use IPv4, skip trying IPv6
         };
         //mongoose.set('debug', true);
-        mongoose.connect('mongodb://localhost:27017/example', options).then(() => { console.log("connected") },
+        mongoose.connect('mongodb://database:27017/example', options).then(() => { console.log("connected") },
             err => { console.log("err", err); });
         this.con = mongoose.connection;
         //Bind connection to error event (to get notification of connection errors)
