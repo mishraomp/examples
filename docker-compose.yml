@@ -6,7 +6,7 @@ services:
     build: employee_ui # specify the directory of the Dockerfile
     container_name: angular
     ports:
-      - "4200:4200" # specify port forewarding
+      - "4200:4200" # specify port forwarding
     links:
       - express
 
@@ -14,7 +14,7 @@ services:
     build: employee_mongo_node # specify the directory of the Dockerfile
     container_name: express
     ports:
-      - "4201:4201" #specify ports forewarding
+      - "4201:4201" #specify ports forwarding
     links:
       - database
 
