@@ -8,13 +8,11 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Copy dependency definitions
-COPY package*.json /app/
+COPY package.json /app/
 
 # Install dependecies
 RUN npm install
-RUN npm install -g @angular/cli
-RUN npm install -g @angular-devkit/build-angular
-RUN npm i -g @angular/compiler-cli
+
 # Get all the code needed to run the app
 COPY . /app/
 

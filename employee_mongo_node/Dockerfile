@@ -4,6 +4,8 @@ FROM node:10
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src/app
 
+RUN mkdir -p /home/isddev/log/
+
 # Change directory so that our commands run inside this new directory
 WORKDIR /usr/src/app
 

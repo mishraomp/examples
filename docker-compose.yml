@@ -4,15 +4,17 @@ version: '2' # specify docker-compose version
 services:
   angular: # name of the first service
     build: employee_ui # specify the directory of the Dockerfile
+    container_name: angular
     ports:
       - "4200:4200" # specify port forewarding
-    volumes:
-      - ./employee_ui:/app # this will enable changes made to the angular app reflect in the container
+    links:
+      - express
 
   express: #name of the second service
     build: employee_mongo_node # specify the directory of the Dockerfile
+    container_name: express
     ports:
-      - "3000:3000" #specify ports forewarding
+      - "4201:4201" #specify ports forewarding
     links:
       - database
 

@@ -1,16 +1,6 @@
 {
-    "/userprofileService": {
-        "target": "http://localhost:18081",
-        "secure": false,
-        "logLevel": "debug"
-    },
-    "/schoolService":{
-        "target": "http://localhost:18081",
-        "secure": false,
-        "logLevel": "debug"
-    },
     "/api":{
-        "target": "http://localhost:4201",
+        "target": "http://express:4201",
         "secure": false,
         "logLevel": "debug"
     }
