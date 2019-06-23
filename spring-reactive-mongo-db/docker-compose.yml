@@ -1,0 +1,16 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  spring: #name of the second service
+    build: . # specify the directory of the Dockerfile
+    container_name: spring
+    ports:
+      - "8090:8090" #specify ports forwarding
+    links:
+      - mongodb
+
+  mongodb: # name of the third service
+    image: mongo # specify image to build container from
+    ports:
+      - "27018:27018" # specify port forewarding
