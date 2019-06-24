@@ -12,5 +12,6 @@ services:
 
   mongodb: # name of the third service
     image: mongo # specify image to build container from
+    command: mongod --port 27018
     ports:
       - "27018:27018" # specify port forewarding
