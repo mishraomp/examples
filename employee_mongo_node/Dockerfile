@@ -2,7 +2,8 @@
 FROM openshift/nodejs:10
 
 #Create app user as root is not allowed.
-RUN pwd
+RUN chgrp -R 0 /usr && \
+    chmod -R g=u /usr
 
 
 # Create a directory where our app will be placed
