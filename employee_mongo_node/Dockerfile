@@ -2,9 +2,8 @@
 FROM openshift/nodejs:10
 
 #Create app user as root is not allowed.
-RUN useradd -r -u 999 -g appuser appuser
-#change to the user
-USER appuser
+RUN pwd
+
 
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src/app
