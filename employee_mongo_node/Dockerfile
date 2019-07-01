@@ -2,8 +2,7 @@
 FROM openshift/nodejs:10
 
 #Create app user as root is not allowed.
-RUN groupadd -g 999 appuser && \
-    useradd -r -u 999 -g appuser appuser
+RUN useradd -r -u 999 -g appuser appuser
 #change to the user
 USER appuser
 
