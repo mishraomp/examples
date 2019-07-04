@@ -15,7 +15,7 @@ export class LoggerConfig {
         {
           level: Logger.TRACE,
           stream: process.stdout
-        },
+        }/* ,
         {
           level: Logger.TRACE,
           stream: new RotatingFileStream({
@@ -27,7 +27,7 @@ export class LoggerConfig {
             totalSize: "20m",      // Don't keep more than 20mb of archived log files
             gzip: true
           })
-        }
+        } */
       ]
     };
     httpLoggerOptions = {
@@ -41,7 +41,7 @@ export class LoggerConfig {
         {
           level: Logger.TRACE,
           stream: process.stdout
-        },
+        }/* ,
         {
           level: Logger.TRACE,
           stream: new RotatingFileStream({
@@ -53,7 +53,7 @@ export class LoggerConfig {
             totalSize: "20m",      // Don't keep more than 20mb of archived log files
             gzip: true
           })
-        }
+        } */
       ]
     };
   }
