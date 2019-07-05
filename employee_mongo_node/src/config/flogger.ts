@@ -1,5 +1,4 @@
 import * as Logger from "bunyan";
-import * as RotatingFileStream from "bunyan-rotating-file-stream";
 let appLoggerOptions: Logger.LoggerOptions;
 let httpLoggerOptions: Logger.LoggerOptions;
 export class LoggerConfig {
