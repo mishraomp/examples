@@ -21,7 +21,7 @@
     "@angular/platform-browser": "^8.0.1",
     "@angular/platform-browser-dynamic": "^8.0.1",
     "@angular/router": "^8.0.1",
-    "angular": "^1.7.8",
+    "angular": "^1.7.9",
     "bunyan": "^1.8.12",
     "core-js": "^2.6.9",
     "g": "^2.0.1",
