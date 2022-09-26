@@ -28,7 +28,7 @@
     "reflect-metadata": "^0.1.12",
     "swagger-ui-express": "^4.0.6",
     "tsoa": "^2.1.1",
-    "pm2":"~3.5.1"
+    "pm2":"~5.2.0"
     
   },
   "devDependencies": {
