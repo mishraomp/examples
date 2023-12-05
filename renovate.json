@@ -1,151 +1,73 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Default preset for use with Renovate's repos",
-  "extends": [
-    "config:recommended",
-    "docker:disableMajor",
-    "group:allNonMajor",
-    "group:definitelyTyped",
-    "group:linters",
-    "group:monorepos",
-    "group:react",
-    "group:recommended",
-    ":automergeDigest",
-    ":automergeLinters",
-    ":automergeMinor",
-    ":automergePatch",
-    ":automergePr",
-    ":automergeRequireAllStatusChecks",
-    ":automergeTypes",
-    ":combinePatchMinorReleases",
-    ":enableVulnerabilityAlerts",
-    ":maintainLockFilesMonthly",
-    ":preserveSemverRanges",
-    ":rebaseStalePrs",
-    ":semanticCommits",
-    ":semanticCommitScope(deps)"
+  "ignorePaths": [
+    "openshift/s3-backup/docker/poetry.lock"
   ],
-  "onboarding": true,
-  "platform": "github",
-  "forkProcessing": "disabled",
-  "configMigration": true,
-  "dependencyDashboard": true,
-  "automerge": true,
-  "automergeType": "pr",
-  "platformAutomerge": true,
-  "prCreation": "not-pending",
-  "rebaseWhen": "behind-base-branch",
-  "prConcurrentLimit": 5,
+  "ignoreDeps": [
+    "axios"
+  ],
+  "onboardingConfig": {
+    "extends": [
+      "config:base"
+    ]
+  },
   "packageRules": [
     {
       "matchManagers": [
-        "github-actions"
-      ],
-      "groupName": "github actions all dependencies",
-      "groupSlug": "github actions all",
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "description": "Py - group boto",
-      "groupName": "boto",
-      "matchPackagePatterns": [
-        "^boto3$",
-        "^botocore$"
-      ],
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "description": "Py - group pytest",
-      "groupName": "pytest",
-      "matchPackagePatterns": [
-        "^pytest$",
-        "^pytest-"
-      ],
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "description": "Py - group sqlalchemy",
-      "groupName": "sqlalchemy",
-      "matchPackagePatterns": [
-        "^sqlalchemy$",
-        "^sqlmodel$",
-        "^sqlacodegen$",
-        "^mock-alchemy$"
-      ],
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "description": "JS - group vite",
-      "groupName": "vite",
-      "matchPackagePatterns": [
-        "^vite$",
-        "^@vitejs\\/"
-      ],
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "description": "JS - group linters",
-      "groupName": "linters",
-      "matchPackagePatterns": [
-        "eslint",
-        "^@prettier\\/",
-        "^prettier-plugin-"
-      ]
-    },
-    {
-      "description": "JS - group @angular",
-      "groupName": "angular",
-      "matchPackagePatterns": [
-        "^@angular\\/",
-        "^@angular-devkit\\/",
-        "^@angular-eslint\\/"
-      ]
-    },
-    {
-      "description": "JS - group aws-amplify",
-      "groupName": "aws-amplify",
-      "matchPackagePatterns": [
-        "^@aws-amplify\\/",
-        "^aws-amplify"
-      ]
-    },
-    {
-      "description": "JS - group @testing-library",
-      "groupName": "testing-library",
-      "matchPackagePatterns": [
-        "^@testing-library\\/"
-      ]
-    },
-    {
-      "description": "JS - group @nestjs",
-      "groupName": "nestjs",
-      "matchPackagePatterns": [
-        "^@nestjs\\/",
-        "nest-winston"
-      ]
-    },
-    {
-      "description": "One week stability period for npm packages",
-      "matchDatasources": [
         "npm"
-      ],
-      "minimumReleaseAge": "7 days"
-    },
-    {
-      "matchManagers": [
-        "maven"
       ],
       "matchUpdateTypes": [
         "minor",
         "patch",
         "lockFileMaintenance"
       ],
-      "groupName": "maven all non-major dependencies",
-      "groupSlug": "maven all-minor-patch",
-      "minimumReleaseAge": "3 days"
+      "groupName": "npm all non-major dependencies",
+      "groupSlug": "npm all-minor-patch"
+    },
+    {
+      "matchPackageNames": [
+        "python"
+      ],
+      "allowedVersions": "<=3.10"
+    },
+    {
+      "matchManagers": [
+        "poetry"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "lockFileMaintenance"
+      ],
+      "groupName": "poetry all non-major dependencies",
+      "groupSlug": "poetry all-minor-patch"
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "github actions all non-major dependencies",
+      "groupSlug": "github actions all-minor-patch"
+    },
+    {
+      "matchManagers": [
+        "dockerfile",
+        "docker-compose"
+      ],
+      "enabled": false
     }
   ],
-  "pre-commit": {
-    "pinDigests": false
-  }
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "autodiscover": true,
+  "autodiscoverFilter": "mihsraomp/reactive-programming-docker",
+  "rebaseWhen": "behind-base-branch",
+  "schedule": [
+    "daily"
+  ]
 }
