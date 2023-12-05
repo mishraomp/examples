@@ -24,7 +24,7 @@
     "lodash": "^4.17.5",
     "method-override": "^3.0.0",
     "mongoose": "^5.7.5",
-    "nconf": "^0.10.0",
+    "nconf": "^0.11.0",
     "reflect-metadata": "^0.1.12",
     "swagger-ui-express": "^4.0.6",
     "tsoa": "^2.1.1",
