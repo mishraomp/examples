@@ -25,7 +25,7 @@
     "bunyan": "^1.8.12",
     "core-js": "^2.6.9",
     "g": "^2.0.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "primeicons": "^1.0.0",
     "primeng": "^8.0.0",
     "rxjs": "~6.5.2",
