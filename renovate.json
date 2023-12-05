@@ -65,7 +65,7 @@
     "enabled": true
   },
   "autodiscover": true,
-  "autodiscoverFilter": "mihsraomp/reactive-programming-docker",
+  "autodiscoverFilter": "mishraomp/reactive-programming-docker",
   "rebaseWhen": "behind-base-branch",
   "schedule": [
     "daily"
