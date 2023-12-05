@@ -1,5 +1,29 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "docker:disableMajor",
+    "group:allNonMajor",
+    "group:definitelyTyped",
+    "group:linters",
+    "group:monorepos",
+    "group:react",
+    "group:recommended",
+    ":automergeDigest",
+    ":automergeLinters",
+    ":automergeMinor",
+    ":automergePatch",
+    ":automergePr",
+    ":automergeRequireAllStatusChecks",
+    ":automergeTypes",
+    ":combinePatchMinorReleases",
+    ":enableVulnerabilityAlerts",
+    ":maintainLockFilesMonthly",
+    ":preserveSemverRanges",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":semanticCommitScope(deps)"
+  ],
   "ignorePaths": [
     "openshift/s3-backup/docker/poetry.lock"
   ],
