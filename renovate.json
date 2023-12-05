@@ -68,6 +68,8 @@
   "autodiscoverFilter": "mishraomp/reactive-programming-docker",
   "rebaseWhen": "behind-base-branch",
   "schedule": [
-    "daily"
+    "after 10pm every weekday",
+    "before 5am every weekday",
+    "every weekend"
   ]
 }
